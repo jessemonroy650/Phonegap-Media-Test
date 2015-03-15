@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>PhoneGap Media Play Test</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="buttons.css" />
+    <style>
+        body {margin:0px;}
+    </style>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript">
+    var my_media = null;
+    var mediaTimer = null;
+    // Wait for PhoneGap to load
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        // Don't do much with this right now.
+        my_media = new Media("/android_asset/www/PeppersPatch1.ogg");
+		my_media.play();
+    }
+    </script>
+</head>
+<body>
+<span onclick='navigator.app.exitApp()'><button class="button button-pill button-primary button-large" style="margin:1em;">Exit</button></span>
+</body>
+</html>
+
+
+

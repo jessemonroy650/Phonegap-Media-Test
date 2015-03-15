@@ -1,0 +1,6 @@
+= NOTES =
+Date: 2015-03-15T00:57:04
+
+This was going to be a standalone media player. So I could test phonegap and debug a problem I was having. As I was assembling pieces I realized I forgot to include 
+the phonegap.js file in my project.
+
