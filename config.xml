@@ -8,7 +8,7 @@
         <preference name="phonegap-version" value="3.5.0" />
 
         <name>Phonegap Media test</name>
-        <description>Smiple media test.</description>
+        <description>Simple media test.</description>
         <author href="http://bsdmasterindex.com" email="jessemonroy650@yahoo.com">
         Jesse Monroy
         </author>
