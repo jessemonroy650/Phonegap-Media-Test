@@ -9,13 +9,15 @@
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
+	function onSuccess() {};
+	function onError(e) {alert('err.code:' + e.code + '\nerr.message' + e.message)};
     var my_media = null;
     var mediaTimer = null;
     // Wait for PhoneGap to load
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
         // Don't do much with this right now.
-        my_media = new Media("/android_asset/www/PeppersPatch1.ogg");
+        my_media = new Media("/android_asset/www/PeppersPatch1.ogg", onSuccess, onError);
 		my_media.play();
     }
     </script>
