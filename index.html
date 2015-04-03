@@ -17,9 +17,9 @@
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
         // Don't do much with this right now.
-        // my_media = new Media("/android_asset/www/PeppersPatch1.ogg", onSuccess, onError);
+        // my_media = new Media("PeppersPatch1.ogg", onSuccess, onError);
 		if (device.platform == 'Android') {
-	        my_media = new Media("PeppersPatch1.ogg", onSuccess, onError);
+	        my_media = new Media("/android_asset/www/PeppersPatch1.ogg", onSuccess, onError);
 		} else {
 	        my_media = new Media("ice_cream_truck.wav", onSuccess, onError);
 		}
