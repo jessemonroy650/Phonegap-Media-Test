@@ -16,6 +16,11 @@
     // Wait for PhoneGap to load
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
+		// hide Exit button. They don't have one on iOS devices.
+		if (device.platform === "iOS") {
+			//alert("got iOS");
+			$("#exitApp").addClass("hidden");
+		}
         // Don't do much with this right now.
         // my_media = new Media("PeppersPatch1.ogg", onSuccess, onError);
 		if (device.platform == 'Android') {
@@ -29,7 +34,7 @@
 </head>
 <body>
 <div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Media Test</div>
-<span onclick='navigator.app.exitApp()'><button class="button button-pill button-primary button-large" style="margin:1em;">Exit</button></span>
+<span onclick='navigator.app.exitApp()'><button id=exitApp class="button button-pill button-primary button-large" style="margin:1em;">Exit</button></span>
 <div class="copyright" style="padding:5px;align:left;font-style:italic;font-size:small;">
     <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
 </div>
