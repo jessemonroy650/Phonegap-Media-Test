@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="buttons.css" />
     <style>
-        body {margin:0px;}
+    body {margin:0px;}
+    .hidden {visibility:collapse;display:none;}
+    .expose {visibility:visible;display:block;} /* Here for completeness only. */
+    .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
@@ -19,27 +22,28 @@
 		// hide Exit button. They don't have one on iOS devices.
 		if (device.platform === "iOS") {
 			//alert("got iOS");
-			$("#exitApp").addClass("hidden");
+			// http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
+			document.getElementById('exitApp').classList.add("hidden");
 		}
-        // Don't do much with this right now.
-        // my_media = new Media("PeppersPatch1.ogg", onSuccess, onError);
+        // Don't do much with this right now. Just play it.
+		var audioFile = "";
 		if (device.platform == 'Android') {
-	        my_media = new Media("/android_asset/www/PeppersPatch1.ogg", onSuccess, onError);
+	        audioFile = "/android_asset/www/PeppersPatch1.ogg";
 		} else {
-	        my_media = new Media("ice_cream_truck.wav", onSuccess, onError);
+	        audioFile = "ice_cream_truck.wav";
 		}
+        my_media = new Media(audioFilename, onSuccess, onError);
 		my_media.play({ numberOfLoops: 99 });
     }
     </script>
 </head>
 <body>
 <div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Media Test</div>
-<span onclick='navigator.app.exitApp()'><button id=exitApp class="button button-pill button-primary button-large" style="margin:1em;">Exit</button></span>
+
+<button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large" style="margin:1em;">Exit</button>
+
 <div class="copyright" style="padding:5px;align:left;font-style:italic;font-size:small;">
     <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
 </div>
 </body>
 </html>
-
-
-
