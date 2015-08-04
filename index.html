@@ -22,7 +22,6 @@
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
         var audioFile = "";
-        // hide Exit button. They don't have one on iOS devices.
         if (device.platform === "iOS") {
             //alert("got iOS");
             // hide Exit button. They don't have one on iOS devices.
@@ -34,10 +33,14 @@
             // iOS picks it up fom the current directory
             audioFile = "ice_cream_truck.wav";
         } else if (device.platform == 'Android') {
+            // Get rid of 300ms delay 
+            document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
+            // Android get the audio file given a FQFN (Fully Qualified File Name)
             audioFile = "/android_asset/www/fanfare3.ogg";
         }
         // Don't do much with this right now. Just play it.
         my_media = new Media(audioFile, onSuccess, onError);
+        // The 'numberOfLoops' is iOS only.
         my_media.play({ numberOfLoops: 99 });
     }
     </script>
