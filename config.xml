@@ -19,8 +19,6 @@
 
         <preference name="permissions" value="none"/>
         <!-- device required so we can detect if we are using iOS -->
-        <!-- <gap:plugin name="org.apache.cordova.device" version="0.2.12" /> -->
-        <!-- <gap:plugin name="org.apache.cordova.media" version="0.2.13" /> -->
         <plugin name="cordova-plugin-device" spec="~2.0.2" />
         <plugin name="cordova-plugin-media" spec="~5.0.2" />
     </widget>
