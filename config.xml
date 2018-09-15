@@ -15,7 +15,7 @@
         Jesse Monroy
         </author>
         <platform name="android" />
-        <platform name="ios" />
+        <!-- <platform name="ios" /> -->
 
         <preference name="permissions" value="none"/>
         <!-- device required so we can detect if we are using iOS -->
