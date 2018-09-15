@@ -32,15 +32,15 @@
             document.body.style.marginTop = "20px";
             // iOS picks it up fom the current directory
             audioFile = "ice_cream_truck.wav";
-            document.getElementById('playing').innerHTML(audioFile);
+            document.getElementById('playing').text(audioFile);
         } else if (device.platform == 'Android') {
             // Get rid of 300ms delay 
             document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
             // Android get the audio file given a FQFN (Fully Qualified File Name)
             audioFile = "file:///android_asset/fanfare3.ogg";
-            document.getElementById('playing').innerHTML(audioFile);
+            document.getElementById('playing').text(audioFile);
         } else {
-            document.getElementById('playing').innerHTML(error);
+            document.getElementById('playing').text("error");
         } 
         // Don't do much with this right now. Just play it.
         my_media = new Media(audioFile, onSuccess, onError);
