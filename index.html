@@ -32,11 +32,13 @@
             document.body.style.marginTop = "20px";
             // iOS picks it up fom the current directory
             audioFile = "ice_cream_truck.wav";
+            document.getElementById('playing').innerHTML(audioFile);
         } else if (device.platform == 'Android') {
             // Get rid of 300ms delay 
             document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
             // Android get the audio file given a FQFN (Fully Qualified File Name)
-            audioFile = "/android_asset/www/fanfare3.ogg";
+            audioFile = "/android_asset/fanfare3.ogg";
+            document.getElementById('playing').innerHTML(audioFile);
         }
         // Don't do much with this right now. Just play it.
         my_media = new Media(audioFile, onSuccess, onError);
@@ -49,11 +51,14 @@
 <div id=header class="button button-block button-large">
     <img align=left src=favicon-48x48.png>
     Phonegap Media Test
+
+    Playing <span id="playing"></span>
+
     <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large">Exit</button>
 </div>
 
 <div class="copyright" style="padding:5px;align:left;font-style:italic;font-size:small;">
-    <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
+    <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2018-15-2018</span>
 </div>
 </body>
 </html>
