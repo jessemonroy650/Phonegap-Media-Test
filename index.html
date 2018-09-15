@@ -33,13 +33,13 @@
 </div>
 </body>
     <script type="text/javascript">
-    function onSuccess() {};
+    function onSuccess() {alert();};
     function onError(e) {alert('err.code:' + e.code + '\nerr.message:' + e.message)};
     var my_media = null;
     var mediaTimer = null;
     function onDeviceReady() {
         var audioFile = "";
-        alert("onDeviceReady");
+        //alert("onDeviceReady");
         // Get rid of 300ms delay 
         document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
         // Android get the audio file given a FQFN (Fully Qualified File Name)
