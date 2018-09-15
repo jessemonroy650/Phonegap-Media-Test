@@ -7,7 +7,7 @@
         <!-- versionCode is optional and Android only -->
 
         <!-- Tool Set Version --> 
-        <preference name='phonegap-version' value='cli-6.0.0' />
+        <preference name='phonegap-version' value='cli-6.5.0' />
 
         <name>Phonegap Media test</name>
         <description>Simple media test. Playback of audio file. ogg=Android, wav=iOS</description>
