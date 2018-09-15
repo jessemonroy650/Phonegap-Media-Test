@@ -37,7 +37,7 @@
             // Get rid of 300ms delay 
             document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
             // Android get the audio file given a FQFN (Fully Qualified File Name)
-            audioFile = "/android_asset/fanfare3.ogg";
+            audioFile = "file:///android_asset/fanfare3.ogg";
             document.getElementById('playing').innerHTML(audioFile);
         } else {
             document.getElementById('playing').innerHTML(error);
