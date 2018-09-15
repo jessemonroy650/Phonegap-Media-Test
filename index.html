@@ -40,18 +40,23 @@
     function onDeviceReady() {
         var audioFile = "";
         //alert("onDeviceReady");
+        document.getElementById('playing').textContent = "onDeviceReady"
+
         // Get rid of 300ms delay 
         document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
+
         // Android get the audio file given a FQFN (Fully Qualified File Name)
         audioFile = "fanfare3.ogg";
-        document.getElementById('playing').textContent =  audioFile;
-        //
+        document.getElementById('playing').textContent = audioFile;
+
         // Don't do much with this right now. Just play it.
         my_media = new Media(audioFile, onSuccess, onError);
+        document.getElementById('playing').textContent = "audio loaded -> " + audioFile;
+
         // The 'numberOfLoops' is iOS only.
         my_media.play();
         //alert("audio playing");
-        alert("done onDeviceReady");
+        document.getElementById('playing').textContent = "audio playing -> " + audioFile;
     }
     // Wait for PhoneGap to load
     document.addEventListener("deviceready", onDeviceReady, false);
