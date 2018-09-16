@@ -54,6 +54,10 @@
         audioFile = getMediaURL("fanfare3.ogg");
         document.getElementById('status').textContent = audioFile;
 
+        // Check for the file. 
+        // https://www.raymondcamden.com/2014/07/01/Cordova-Sample-Check-for-a-file-and-download-if-it-isnt-there/
+        window.resolveLocalFileSystemURL(audioFile, onSuccess, onError);
+
         // Don't do much with this right now. Just play it.
         my_media = new Media(audioFile, onSuccess, onError);
         document.getElementById('status').textContent = "audio loaded -> " + audioFile;
