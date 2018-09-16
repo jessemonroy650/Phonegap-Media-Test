@@ -33,14 +33,17 @@
 </div>
 </body>
     <script type="text/javascript">
+    var my_media = null;
+    var mediaTimer = null;
+    //
     function onSuccess() {
         document.getElementById('status').textContent = "found file";
+		return;
     };
     function onError(e) {
         alert('err.code:' + e.code + '\nerr.message:' + e.message)
+		return;
     };
-    var my_media = null;
-    var mediaTimer = null;
     // Thanks Raymond ;-) - https://www.raymondcamden.com/2014/06/23/Cordova-Media-API-Example
     function getMediaURL(s) {
         if(device.platform.toLowerCase() === "android") return "/android_asset/www/" + s;
