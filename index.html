@@ -46,34 +46,33 @@
     };
     // Thanks Raymond ;-) - https://www.raymondcamden.com/2014/06/23/Cordova-Media-API-Example
     function getMediaURL(s) {
-        if(device.platform.toLowerCase() === "android") return "/android_asset/www/" + s;
+        if (device.platform.toLowerCase() === "android") return "/android_asset/www/" + s;
         return s;
     }
     function onDeviceReady() {
-        var audioFile = "";
-        //alert("onDeviceReady");
-        document.getElementById('status').textContent = "onDeviceReady";
+        var audioFile = "fanfare3.ogg";
+        var statusContext = document.getElementById('status');
+        statusContext.textContent = "onDeviceReady";
 
         // Get rid of 300ms delay 
         document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
 
         // Android get the audio file given a FQFN (Fully Qualified File Name)
-        audioFile = getMediaURL("fanfare3.ogg");
-        document.getElementById('status').textContent = audioFile;
+        audioFile = getMediaURL(audioFile);
+        statusContext.textContent = audioFile;
 
         // Check for the file. 
         // https://www.raymondcamden.com/2014/07/01/Cordova-Sample-Check-for-a-file-and-download-if-it-isnt-there/
         window.resolveLocalFileSystemURL(audioFile, onSuccess, onError);
-        document.getElementById('status').textContent = "Found file";
+        statusContext.textContent = "Found file";
 
         // Don't do much with this right now. Just play it.
         my_media = new Media(audioFile, onSuccess, onError);
-        document.getElementById('status').textContent = "audio loaded -> " + audioFile;
+        statusContext.textContent = "audio loaded -> " + audioFile;
 
         // The 'numberOfLoops' is iOS only.
         my_media.play();
-        //alert("audio playing");
-        document.getElementById('status').textContent = "audio playing -> " + audioFile;
+        statusContext.textContent = "audio playing -> " + audioFile;
     }
     // Wait for PhoneGap to load
     document.addEventListener("deviceready", onDeviceReady, false);
