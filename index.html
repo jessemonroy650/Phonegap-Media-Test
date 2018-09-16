@@ -47,31 +47,31 @@
     //
     function onDeviceReady() {
         var audioFile = "fanfare3.ogg";
-        var statusContext = document.getElementById('status');
-        statusContext.textContent = "onDeviceReady";
+
+        document.getElementById('status').textContent = "onDeviceReady";
 
         // Get rid of 300ms delay 
         document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
 
         // Android get the audio file given a FQFN (Fully Qualified File Name)
         // https://www.npmjs.com/package/cordova-plugin-file#android-file-system-layout
-        statusContext.textContent = cordova.file.applicationDirectory;
-        //statusContext.textContent = cordova.file.applicationDirectory + audioFile;
+        document.getElementById('status').textContent = cordova.file.applicationDirectory;
+        //document.getElementById('status').textContent = cordova.file.applicationDirectory + audioFile;
 
         return;
         
         // Check for the file. 
         // https://www.raymondcamden.com/2014/07/01/Cordova-Sample-Check-for-a-file-and-download-if-it-isnt-there/
         window.resolveLocalFileSystemURL(audioFile, onSuccess, onError);
-        statusContext.textContent = "Found file";
+        document.getElementById('status').textContent = "Found file";
 
         // Don't do much with this right now. Just play it.
         my_media = new Media(audioFile, onSuccess, onError);
-        statusContext.textContent = "audio loaded -> " + audioFile;
+        document.getElementById('status').textContent = "audio loaded -> " + audioFile;
 
         // The 'numberOfLoops' is iOS only.
         my_media.play();
-        statusContext.textContent = "audio playing -> " + audioFile;
+        document.getElementById('status').textContent = "audio playing -> " + audioFile;
     }
     // Wait for PhoneGap to load
     document.addEventListener("deviceready", onDeviceReady, false);
