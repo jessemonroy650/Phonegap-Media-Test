@@ -20,10 +20,10 @@
 
         // Android get the audio file given a FQFN (Fully Qualified File Name)
         // https://www.npmjs.com/package/cordova-plugin-file#android-file-system-layout
-        document.getElementById('status').textContent = cordova.file.applicationDirectory;
-        //document.getElementById('status').textContent = cordova.file.applicationDirectory + audioFile;
+        //document.getElementById('status').textContent = cordova.file.applicationDirectory;
+        document.getElementById('status').textContent = audioFile;
 
-        return;
+        //return;
         
         // Check for the file. 
         // https://www.raymondcamden.com/2014/07/01/Cordova-Sample-Check-for-a-file-and-download-if-it-isnt-there/
